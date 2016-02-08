@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sun Oct 25 03:58:12 PDT 2015
+org.eclipse.jst.jee.server\:OMS=C\:\\Users\\sagar\\Downloads\\sts\\sts-bundle\\pivotal-tc-server-developer-3.1.1.RELEASE\\base-instance\\wtpwebapps\\OMS
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\sagar\\.m2\\repository\\org\\springframework\\spring-web\\4.0.0.RELEASE\\spring-web-4.0.0.RELEASE.jar=C\:\\Users\\sagar\\Downloads\\sts\\sts-bundle\\pivotal-tc-server-developer-3.1.1.RELEASE\\base-instance\\wtpwebapps\\OMS\\WEB-INF\\lib\\spring-web-4.0.0.RELEASE.jar

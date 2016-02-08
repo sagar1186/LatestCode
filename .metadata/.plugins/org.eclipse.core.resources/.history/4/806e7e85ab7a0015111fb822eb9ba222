@@ -1,0 +1,8 @@
+package com.boat.hackathon.model;
+
+public class Snippet {
+	public static void main(String[] args) {
+		private String
+	}
+}
+

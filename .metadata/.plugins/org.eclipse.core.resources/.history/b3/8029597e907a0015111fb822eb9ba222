@@ -1,0 +1,5 @@
+package com.boat.hackathon.services;
+
+public interface OrderService {
+
+}

@@ -1,0 +1,5 @@
+package com.boat.hackathon.services;
+
+public class OrderServiceImpl implements OrderService {
+
+}

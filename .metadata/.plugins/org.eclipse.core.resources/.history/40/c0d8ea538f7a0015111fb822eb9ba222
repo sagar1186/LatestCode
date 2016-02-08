@@ -1,0 +1,5 @@
+package com.boat.hackthon.constant;
+
+public class OrderURIConstants {
+
+}

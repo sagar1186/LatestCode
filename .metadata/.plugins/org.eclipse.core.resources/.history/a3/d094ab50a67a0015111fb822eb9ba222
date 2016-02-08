@@ -1,0 +1,33 @@
+package com.boat.hackathon.model;
+
+public class Payment {
+	private String merchantEmail;
+	private String payerEmail;
+	private String paymentTerms;
+	private String transactionId;
+	public String getMerchantEmail() {
+		return merchantEmail;
+	}
+	public void setMerchantEmail(String merchantEmail) {
+		this.merchantEmail = merchantEmail;
+	}
+	public String getPayerEmail() {
+		return payerEmail;
+	}
+	public void setPayerEmail(String payerEmail) {
+		this.payerEmail = payerEmail;
+	}
+	public String getPaymentTerms() {
+		return paymentTerms;
+	}
+	public void setPaymentTerms(String paymentTerms) {
+		this.paymentTerms = paymentTerms;
+	}
+	public String getTransactionId() {
+		return transactionId;
+	}
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+}

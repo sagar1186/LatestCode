@@ -1,0 +1,8 @@
+package com.boat.hackathon.model;
+
+public class Payment {
+	private String bt_customer_id;
+	private String payment_method_token;
+	private String sub_merchant_id;
+	private double amount;
+	private double service_fee;}

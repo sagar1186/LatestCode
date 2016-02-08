@@ -1,0 +1,14 @@
+package com.boat.hackathon.model;
+
+public class Catalog {
+	
+	private int item_upc;	
+	private boolean availability;
+	private String quantity;
+	private String price;
+	private String sub_merchant_id;
+	private String customer_id;
+	private String  catalog_id;
+	
+
+}

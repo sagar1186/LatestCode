@@ -1,0 +1,19 @@
+package com.boat.hackathon.model;
+
+public class Order {
+	
+	private String transaction_id;
+	private String transaction_type;
+	private String merchant_id;
+	private String customer_id;
+	private String item_upc;
+	private String amount;
+	private String status;
+	private String session_id;
+	
+
+
+	
+	
+
+}

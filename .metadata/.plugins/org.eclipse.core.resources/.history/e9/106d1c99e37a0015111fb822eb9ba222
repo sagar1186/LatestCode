@@ -1,0 +1,11 @@
+package com.boat.hackthon.constant;
+
+public class OrderURIConstants {
+
+	public static final String CREATE_ORDER = "/order/create";
+	public static final String GET_CATALOG_URL = "http://10.101.1.165:8080/data/catalog/";
+	public static final String ORDER_DATASERVICE_URL = "http://10.101.1.165:8080/boat/transaction/create";
+	public static final String PAYMENT_DATASERVICE_URL = "http://10.101.1.165:8080/boat/transaction/create";
+	public static final String GET_PAYMENT_URL = "http://10.101.1.165:8080/merchant/payment";
+	
+}

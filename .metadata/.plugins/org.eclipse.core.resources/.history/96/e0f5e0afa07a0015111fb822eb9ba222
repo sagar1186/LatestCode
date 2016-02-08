@@ -1,0 +1,7 @@
+package com.boat.hackthon.constant;
+
+public class OrderURIConstants {
+
+	public static final String CREATE_ORDER = "/order/createOrder";
+	
+}

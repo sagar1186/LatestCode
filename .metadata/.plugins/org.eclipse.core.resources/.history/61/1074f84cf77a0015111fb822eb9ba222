@@ -1,0 +1,5 @@
+package com.boat.hackathon.model;
+
+public class Customer {
+
+}

@@ -1,0 +1,57 @@
+package com.boat.hackathon.model;
+
+public class Catalog {
+	
+	private String item_upc;	
+	private boolean availability;
+	private String quantity;
+	private String price;
+	private String sub_merchant_id;
+	private String customer_id;
+	private String  catalog_id;
+	
+	public String getItem_upc() {
+		return item_upc;
+	}
+	public void setItem_upc(String item_upc) {
+		this.item_upc = item_upc;
+	}
+	public boolean isAvailability() {
+		return availability;
+	}
+	public void setAvailability(boolean availability) {
+		this.availability = availability;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getSub_merchant_id() {
+		return sub_merchant_id;
+	}
+	public void setSub_merchant_id(String sub_merchant_id) {
+		this.sub_merchant_id = sub_merchant_id;
+	}
+	public String getCustomer_id() {
+		return customer_id;
+	}
+	public void setCustomer_id(String customer_id) {
+		this.customer_id = customer_id;
+	}
+	public String getCatalog_id() {
+		return catalog_id;
+	}
+	public void setCatalog_id(String catalog_id) {
+		this.catalog_id = catalog_id;
+	}
+
+}

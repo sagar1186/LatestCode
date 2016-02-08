@@ -1,0 +1,9 @@
+package com.boat.hackathon.model;
+
+import java.util.ArrayList;
+
+public class CatalogList {
+	
+	private ArrayList<Catalog> item =new ArrayList<Catalog>();
+
+}

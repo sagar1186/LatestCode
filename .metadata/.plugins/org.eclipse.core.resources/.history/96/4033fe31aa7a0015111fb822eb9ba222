@@ -1,0 +1,178 @@
+package com.boat.hackathon.services;
+
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+
+import org.springframework.web.client.RestTemplate;
+
+import com.boat.hackathon.model.Catalog;
+import com.boat.hackathon.model.CatalogList;
+import com.boat.hackathon.model.Item;
+import com.boat.hackathon.model.Order;
+import com.boat.hackathon.model.Payment;
+import com.boat.hackathon.model.Request;
+import com.boat.hackathon.model.Response;
+import com.boat.hackthon.constant.OrderURIConstants;
+
+public class OrderServiceImpl implements OrderService {
+	
+	Response response=new Response();
+	RestTemplate restTemplate = new RestTemplate();
+	
+	
+	class CheaperItemPriceCompTest implements Comparator<Item>{
+		 
+	    @Override
+	    public int compare(Item e1, Item e2) {
+	        if(e1.getAmount() > e2.getAmount()){
+	            return 1;
+	        } else {
+	            return -1;
+	        }
+	    }
+	}
+	
+	
+	
+	
+	class CheaperItemPriceComp implements Comparator<Catalog>{
+		 
+	    @Override
+	    public int compare(Catalog e1, Catalog e2) {
+	        if(e1.getPrice() > e2.getPrice()){
+	            return 1;
+	        } else {
+	            return -1;
+	        }
+	    }
+	}
+	
+	
+	
+	public Response createOrder(Request boatReq)
+	{   
+	 
+	
+		
+	//Call catalog webservice for item
+	System.out.println("*****Calling get Catalog web service*********");
+	
+	/*
+	CatalogList catalogs = restTemplate.postForObject(OrderURIConstants.GET_CATALOG_URL, boatReq, CatalogList.class);
+	ArrayList<Catalog> items=catalogs.getCatalog();
+	Collections.sort(items,new CheaperItemPriceComp());
+	
+	Catalog cheaperItem =new Catalog();
+	
+	if(null!=items)
+	{
+	cheaperItem=items.get(0);
+	System.out.println("******Cheaper Price-->"+cheaperItem.getPrice());
+	}
+	
+	//Calling order data service-Save Order data into DB
+	
+	//End
+	
+	//call payment web service
+	double price=cheaperItem.getPrice();
+	double serviceFee=price*0.2;
+	double amount=price-price*0.2;
+	Payment paymentReq=new Payment();
+	paymentReq.setAmount(amount);
+	paymentReq.setBt_customer_id(boatReq.getCustomer_id());
+	paymentReq.setPayment_method_token(boatReq.getPayment_method_token());
+	paymentReq.setService_fee(serviceFee);
+	paymentReq.setSub_merchant_id(cheaperItem.getSub_merchant_id());
+	System.out.println("*****Calling get payment web service*********");
+	restTemplate.postForObject(OrderURIConstants.GET_PAYMENT_URL, paymentReq, CatalogList.class);
+	//end
+	 * 
+	  int orderId=Calendar.getInstance().get(Calendar.MILLISECOND);
+	*/
+	
+	//Calling payment data service-Save payment data into DB
+	
+		//End
+	
+	 Order order=new Order();
+	// order.getPayment("PayPal");
+	 
+		Item item1=new Item();
+		item1.setItem_upc(12345);
+		item1.setMerchant_id(11);;
+		item1.setUnitPrice(11.2);
+		item1.setQuantity(1);
+		item1.setAvailability("true");
+		
+		Item item2=new Item();
+		item2.setItem_upc(45636);
+		item2.setMerchant_id(67);;
+		item2.setUnitPrice(10.20);
+		item2.setQuantity(1);
+		item2.setAvailability("true");
+		
+		Item item3=new Item();
+		item3.setItem_upc(23645);
+		item3.setMerchant_id(234);;
+		item3.setUnitPrice(11.55);
+		item3.setQuantity(1);
+		item3.setAvailability("true");
+		
+		 ArrayList<Item> items1  =new ArrayList<Item>();
+		 items1.add(item1);
+		 items1.add(item2);
+		 items1.add(item3);
+		
+		//ArrayList<Item> items =order.getItemList().getItem();
+
+			Collections.sort(items1,new CheaperItemPriceCompTest());
+			Item cheaperItem1=items1.get(0);
+			//Catalog cheaperItem =new Catalog();
+		
+		Date date = new Date();
+	    SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+	    String strDate = sdf.format(date);
+		int orderId=Calendar.getInstance().get(Calendar.MILLISECOND);
+		
+		
+		System.out.println("**********cheaperItem-->"+cheaperItem1.getUnitPrice());
+		//double amount1=cheaperItem1.getPrice()+(cheaperItem1.getPrice())*0.6;
+		
+		//cheaperItem.setAmount(amount);
+		//cheaperItem.setCustomer_id(boatReq.getCustomer_id());
+		//cheaperItem.setTransaction_id(orderId);
+		
+	
+		
+		System.out.println("In service layer");
+		
+		response.setOrderId(orderId);
+		response.setStatus("Success");
+		response.setTimestamp(strDate);
+		//response.setPayment(order.getPayment());
+		
+		
+		
+		//calling save payment service here
+	
+		
+		//Response response = restTemplate.postForObject(SERVER_URI1+OrdRestURIConstants.CREATE_ORDER, cheaperItem, Response.class);
+				//printOrderData(response);
+		
+				//end save payment service	
+		
+		
+		return response;
+		
+	
+		
+	}
+
+
+}
